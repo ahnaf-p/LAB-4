@@ -32,7 +32,7 @@ dan nanti akan berubah lagi menjadi
     [admin@mikrotik] >  
 yang artinya kita sudah diluar/root.  
 # Melihat Command yang tersedia
-Selain itu, kita juga bisa mengunakan key/tombol **TAB** di keyboard (disamping **Q**) untuk melihat command list/daftar perintah yang bisa digunakan. Jadi jika kita sedang konfigurasi dan lupa lanjutannya, kita cukup tekan **TAB** saja.  
+Selain itu, kita juga bisa mengunakan key/tombol **TAB** di keyboard (disamping **Q**) untuk melengkapi command dan melihat command list/daftar perintah yang bisa digunakan. Jadi jika kita sedang konfigurasi dan lupa lanjutannya, kita cukup tekan **TAB** saja.  
 ![TAB](TAB.PNG)  
 Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa menggunakan **?** di keyboard (SHIFT + /). Berbeda dengan **TAB** yang hanya melihat command, selain untuk melihat command **?** juga menampilkan penjelasan setiap commandnya. Jadi jika bingung apa sih fungsi dari command ini, kita bisa mengunakan **?** command dan penjelasannya akan muncul.  
 ![Q](Q.PNG)  
@@ -105,5 +105,55 @@ Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa meng
         Hanya mengizinkan user untuk membaca/melihat konfigurasi router.  
      **3. Write**  
         Memberikan pengguna kemampuan untuk mengubah konfigurasi router. Mereka dapat menambahkan, menghapus, atau memodifikasi pengaturan yang ada.  
-     
+  5. Melihat License  
+
+         system license print
+  6. Mengkonfigurasi NAT Firewall  
+
+         ip firewall nat add chain=srcnat action=masquerade out-interface=ether1
+     Dan dapat dilihat dengan  
+
+         ip firewall nat print
+  7. Mengkonfigurasi DNS  
+
+         ip dns set server=8.8.8.8 allow-remote-request=yes
+     Dan dapat dilihat dengan  
+
+         ip dns print
+  8. Mengkonfigurasi DHCP Client  
+
+         ip dhcp-client add interface=ether1 use-peer-dns=yes use-peer-ntp=yes add-default-route=yes disable=no
+     Dan dapat dilihat di  
+
+         ip dhcp-client print
+  9. Mengkonfigurasi pool  
+
+          ip pool add name=pool-dua ranges=192.168.88.1-192.168.88.50
+     Dapat dilihat di  
+
+         ip pool print
+  10. Mengetest koneksi  
+
+          ping 8.8.8.8
+  11. Factory Reset  
+
+          system reset-configuration
+  12. Menganti identitas/nama Mikrotik  
+
+          system identity name=Mikrotik-dua
+  13. Restart/Reboot Mikrotik  
+
+          system reboot
+  14. Mematikan/shutdown Mikrotik
+
+          system shutdown
+  15. Mengaktifkan NTP server
+
+          system ntp client set enabled=yes server-dns-name=0.pool.ntp.org
+# Kesimpulan
+  Konfigurasi di CLI akan sangat cepat jika sudah hafal setiap fungsi dan commandnya. Juga ada fitur **?** untuk melihat command jika lupa.
+
+
+      
+
        
