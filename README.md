@@ -13,4 +13,9 @@ berarti kalo di CLI
 
     ip dhcp-client add interface=ether1 use-peer-dns=yes use-peer-ntp=yes add-default-route=yes disabled=no
 # Meliat Command yang tersedia
-Selain itu, kita juga bisa mengunakan key/tombol **TAB** di keyboard (disamping **Q**) untuk melihat command list/daftar perintah yang bisa digunakan. Jadi jika kita sedang konfigurasi dan lupa lanjutannya, kita cukup tekan **TAB** saja. Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa menggunakan **?** di keyboard (SHIFT + /).
+Selain itu, kita juga bisa mengunakan key/tombol **TAB** di keyboard (disamping **Q**) untuk melihat command list/daftar perintah yang bisa digunakan. Jadi jika kita sedang konfigurasi dan lupa lanjutannya, kita cukup tekan **TAB** saja.  
+![TAB](TAB.PNG)  
+Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa menggunakan **?** di keyboard (SHIFT + /). Berbeda dengan **TAB** yang hanya melihat command, selain untuk melihat command **?** juga menampilkan penjelasan setiap commandnya. Jadi jika bingung apa sih fungsi dari command ini, kita bisa mengunakan **?** command dan penjelasannya akan muncul.  
+![Q](Q.PNG)  
+# Beberapa Command dan Penjelasannya
+  1. ip print
