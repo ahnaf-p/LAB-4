@@ -18,19 +18,70 @@ Berbeda dengan Terminal Linux dan Windows, di terminal RouterOS, kita bisa menyi
 Bisa disingkat jadi
 
     ip add pr
-    
+Untuk masuk/keluar direktory, disini saya akan masuk ke **IP** berarti
+
+    ip
+Nanti berubah menjadi  
+
+    [admin@mikrotik] /ip >  
+Yang berarti kita sudah masuk ke ip, dan untuk kembali kita bisa mengunakan **/** (slash) lalu enter,  
+
+    /  
+dan nanti akan berubah lagi menjadi  
+
+    [admin@mikrotik] >  
+yang artinya kita sudah diluar/root.  
 # Meliat Command yang tersedia
 Selain itu, kita juga bisa mengunakan key/tombol **TAB** di keyboard (disamping **Q**) untuk melihat command list/daftar perintah yang bisa digunakan. Jadi jika kita sedang konfigurasi dan lupa lanjutannya, kita cukup tekan **TAB** saja.  
 ![TAB](TAB.PNG)  
 Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa menggunakan **?** di keyboard (SHIFT + /). Berbeda dengan **TAB** yang hanya melihat command, selain untuk melihat command **?** juga menampilkan penjelasan setiap commandnya. Jadi jika bingung apa sih fungsi dari command ini, kita bisa mengunakan **?** command dan penjelasannya akan muncul.  
 ![Q](Q.PNG)  
-# Beberapa Command dan Penjelasannya
-  1. ip address print
-![ipp](ippr.PNG)
-  Digunakan untuk melihat ip address dan di interface mana ip address itu.
-**#** disitu maksudnya Number
-**Address** IP Address yang digunakan di interface itu
-**Network** IP Network
+# Beberapa Command dan Penjelasannya  
+  1. add, set, remove, disable, enable, dan print  
+     a. add  
+       Command **add** digunakan untuk menambahkan , contoh menambahkan IP Address.  
 
-  3. interface print  
-  4. 
+          ip address add
+     contoh command lengkapnya  
+
+          ip address add interface=ether2 address=192.168.1.1/24
+     b. set  
+       Command ini digunakan untuk mengedit yang sudah ada, contohnya jika sebelumnya kita menambahkan IP Address dan ternyata ada typo atau kesalahan penulisan di IP nya, kita bisa edit menggunakan **set**.  
+
+          ip address set number=1 address=192.168.88.1/24
+     Jika belum yakin terubah bisa di cek mengunakan **ip add pr**. Cara mengetahui **number** nya dari **ip add pr** dibagian **#**.  
+     c. remove
+       Remove ini digunakan untuk menghapus, contohnya kita akan menghapus ip address yang telah dibuat dan diedit sebelumnnya.
+
+          ip address remove number=1
+     Jika belum yakin terhapus bisa di cek mengunakan **ip add pr**.
+     d. disable
+       Digunakan untuk mematikan/disable. Contohnya kita akan disable ip address dari interface ether2 yang telah dibuat tadi.
+
+          ip address disable number=1
+     Untuk melihat sudah mati atau belum bisa dicek dengan
+
+          ip address print
+     Jika sudah mati, maka akan ada logo **X** di samping **Number (#)**  dan sebelum **Address**
+
+          1 X 192.168.88.1/24 192.168.88.0 ether2
+     e. enable
+     Digunakan untuk menyalakan/enable. Cohtohnya  kita akan enable ip address dari interface yang dimatikan tadi.
+
+          ip address enable number=1
+      Untuk melihat sudah nyala atau belum bisa dicek dengan
+
+          ip address print
+     Jika sudah nyala, maka logo **X** di samping **Number (#)**  dan sebelum **Address akan hilang atau tidak ada logo **X****
+
+          1   192.168.88.1/24 192.168.88.0 ether2
+     f. print  
+  3. ip address print  
+![ipp](ippr.PNG)  
+  Digunakan untuk melihat ip address dan di interface mana ip address itu.  
+**#** disitu maksudnya Number  
+**Address** IP Address yang digunakan di interface itu  
+**Network** IP Network  
+**Interface** Gerbang masuk/keluar  
+**D** Dynamuc, yg berarti IP Address di Interface itu didapet dari DHCP atau menggunakan DHCP Client.
+     
