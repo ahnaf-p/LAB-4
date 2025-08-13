@@ -78,7 +78,7 @@ Masih bingung dengan **TAB**? Selain mengunakan **TAB** key, kita juga bisa meng
      f. print  
      Digunakan untuk melihat tabel/list yang tersedia.  
   2. ip address print  
-![ipp](ippr.PNG)  
+![ipp](ippr.PNG)   
     Digunakan untuk melihat ip address dan di interface mana ip address itu.  
 **#** disitu maksudnya Number  
 **Address** IP Address yang digunakan di interface itu  
